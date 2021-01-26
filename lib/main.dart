@@ -123,9 +123,12 @@ void main() async {
 
   // Url
   trufiCfg.url.otpEndpoint = globalCfg.getString("urlOtpEndpoint");
-  trufiCfg.url.tilesStreetsEndpoint = globalCfg.getString("urlTilesStreetsEndpoint");
-  trufiCfg.url.tilesSatelliteEndpoint = globalCfg.getString("urlTilesSatelliteEndpoint");
-  trufiCfg.url.tilesTerrainEndpoint = globalCfg.getString("urlTilesTerrainEndpoint");
+  trufiCfg.url.tilesStreetsEndpoint =
+      globalCfg.getString("urlTilesStreetsEndpoint");
+  trufiCfg.url.tilesSatelliteEndpoint =
+      globalCfg.getString("urlTilesSatelliteEndpoint");
+  trufiCfg.url.tilesTerrainEndpoint =
+      globalCfg.getString("urlTilesTerrainEndpoint");
   trufiCfg.url.adsEndpoint = globalCfg.getString("urlAdsEndpoint");
   trufiCfg.url.routeFeedback = globalCfg.getString("urlRouteFeedback");
   trufiCfg.url.donate = globalCfg.getString("urlDonate");
@@ -144,6 +147,35 @@ void main() async {
         accentColor: const Color(0xffd81b60),
         backgroundColor: Colors.white,
       ),
+      customWidget: customWidget,
     ),
+  );
+}
+
+// custom widget demo
+Widget customWidget(Locale locale) {
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.end,
+    children: [
+      GestureDetector(
+        onTap: () {},
+        child: Container(
+          height: 50,
+          width: 200,
+          decoration: BoxDecoration(
+            color: Color(0xFFd81b60),
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Center(
+            child: Text(
+              "Start Tracking",
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ),
+      ),
+    ],
   );
 }
